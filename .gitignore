@@ -1,0 +1,13 @@
+.vscode
+dist
+.idea
+bin/resource/certs
+go_build*
+
+_*
+certs
+*.pcap
+bin
+log
+./uploadFiles
+config.yaml

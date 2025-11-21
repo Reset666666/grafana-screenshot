@@ -1,0 +1,29 @@
+# Grafana API Token，用于授权访问 Grafana 渲染接口。
+# 获取方式：进入 Grafana -> Configuration -> API Keys -> 创建 Token
+token: "your_grafana_api_token"
+
+# Grafana 地址（需确保开启了 Render 插件并可外部访问）
+baseURL: "http://192.168.1.1:3000"
+# 全局默认的 Grafana 组织 ID
+# 如果某个面板没有单独配置 orgID，会使用这个值
+orgID: 1
+
+# 定时任务的 Cron 表达式（使用标准 Linux 格式：分 时 日 月 星期）
+# 下面的表达式表示：每天凌晨 2 点执行
+cronTime: "0 0 2 * *"
+
+# 需要截图的多个面板列表
+dashboards:
+  - name: "业务监控"             # 自定义名称，用来命名截图文件
+    dashboardUID: "aaaaaaa"  # Grafana 面板的 UID（URL 中可获取,http://{Grafana地址}/d/{dashboardUID}/{slug}）
+    slug: "3153192"               # Grafana 中 Dashboard 的 URL Slug（访问地址的一部分）
+    orgID: 1     # 指定单独 orgID，优先于全局 orgID
+  - name: "资源概览"
+    dashboardUID: "b5ccyvk4r9fiea"
+    slug: "dashboard2"
+  - name: "网络监控"
+    dashboardUID: "zbxw336sdfbksx"
+    slug: "dashboard3"
+
+devMode: true  # 开发模式,启用后不会跑定时任务,方便调试
+wechatBotKey:
