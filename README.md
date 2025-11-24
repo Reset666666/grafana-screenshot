@@ -36,4 +36,9 @@ https://grafana.com/grafana/plugins/grafana-image-renderer/
     cd grafana-screenshot
     ```
 2. 修改配置文件 `config_bak.yaml` 为 `config.yaml`，并根据实际情况修改配置项
-3. 编译运行
+3. simhei.ttf 字体文件、config.yaml配置文件放在可执行文件同目录下
+4. 编译运行
+   ```bash
+    go build -o grafana-screenshot main.go
+    ./grafana-screenshot
+    ```
